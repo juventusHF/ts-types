@@ -1,4 +1,4 @@
-import {describe, expect, test} from '@jest/globals';
+import { describe, expect, test } from '@jest/globals';
 
 /**
  * https://www.typescriptlang.org/docs/handbook/type-inference.html
@@ -27,7 +27,7 @@ describe('type inference', () => {
     });
 
     test('finds best common type', () => {
-        const people = [{name: "Linda"}, null]
+        const people = [{ name: "Linda" }, null]
         console.log(typeof people) // -> object
 
         // complains only if strict mode is enabled
@@ -35,7 +35,7 @@ describe('type inference', () => {
     });
 
     test('contextual typing', () => {
-        type Person = {name: string}
+        type Person = { name: string }
         type Operations = {
             someFun?: (p: Person) => boolean
         }
@@ -80,9 +80,9 @@ describe('type narrowing', () => {
     test('null is also an object', () => {
         function printAll(strs: string | string[] | null) {
             if (typeof strs === "object") {
-                for (const s of strs) {
-                    console.log(s);
-                }
+                //for (const s of strs) {
+                //    console.log(s);
+                //}
             } else if (typeof strs === "string") {
                 console.log(strs);
             } else {
